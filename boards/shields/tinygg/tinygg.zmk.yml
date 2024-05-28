@@ -1,0 +1,11 @@
+file_format: "1"
+id: tinygg
+name: tinygg
+type: shield
+url: https://github.com/celinafg/tinygg
+requires: [nice_nano_v2]
+features:
+  - keys
+siblings:
+  - tinygg_left
+  - tinygg_right
