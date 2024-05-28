@@ -2,8 +2,11 @@
 
 
 config SHIELD_TINYGG_LEFT
-    def_bool $(shields_list_contains,tinygg_left)
+        def_bool $(shields_list_contains,tinygg_left)
+    select SPI
 
 config SHIELD_TINYGG_RIGHT
-    def_bool $(shields_list_contains,tinygg_right)
+        def_bool $(shields_list_contains,tinygg_right)
+    select SPI
+
 
