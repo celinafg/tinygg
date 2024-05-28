@@ -7,7 +7,6 @@ config ZMK_KEYBOARD_NAME
 config ZMK_SPLIT_ROLE_CENTRAL
     default y
 
-endif
 
 if SHIELD_TINYGG_LEFT || SHIELD_TINYGG_RIGHT
 
@@ -17,6 +16,7 @@ config ZMK_SPLIT
 config ZMK_DISPLAY
 	select LV_FONT_MONTSERRAT_28
     
+endif
 if ZMK_DISPLAY
 
 config SPI
@@ -31,3 +31,4 @@ config ZMK_DISPLAY_INVERT
 endif # ZMK_DISPLAY
 
 
+endif
