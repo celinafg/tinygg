@@ -6,3 +6,4 @@ config SHIELD_TINYGG_LEFT
 
 config SHIELD_TINYGG_RIGHT
     def_bool $(shields_list_contains,tinygg_right)
+
