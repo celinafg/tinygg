@@ -3,7 +3,7 @@ file_format: "1"
 id: tinygg
 name: TinyGG
 type: shield
-url: https://github.com/your_repo/tinygg_shield
+url: https://github.com/celinafg/tinygg
 requires: [nice_nano_v2]
 exposes: [display]
 features:

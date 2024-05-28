@@ -1,24 +1,42 @@
 // tinygg_shield/boards/shields/tinygg/tinygg_right.overlay
-#include "nice_nano.dtsi"
+#include <nrf52.dtsi>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/matrix_transform.h>
 
-&kscan0 {
-    col-gpios
-        = <&pro_micro 10 GPIO_ACTIVE_HIGH>, <&pro_micro 16 GPIO_ACTIVE_HIGH>,
-          <&pro_micro 14 GPIO_ACTIVE_HIGH>, <&pro_micro 15 GPIO_ACTIVE_HIGH>,
-          <&pro_micro 18 GPIO_ACTIVE_HIGH>, <&pro_micro 19 GPIO_ACTIVE_HIGH>;
+/ {
+    chosen {
+        zmk,kscan = &kscan0;
+        zmk,matrix-transform = &default_transform;
+    };
 
-    row-gpios
-        = <&pro_micro 6 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>, <&pro_micro 7 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
-          <&pro_micro 8 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>, <&pro_micro 0 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
-          <&pro_micro 4 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;
-};
+    kscan0: kscan {
+        compatible = "zmk,kscan-gpio-matrix";
+        diode-direction = "col2row";
+        wakeup-source;
 
-&display {
-    compatible = "ssd1306,ssd1306fb";
-    reg = <0x3c>;
-    width = <128>;
-    height = <32>;
-    spi-max-frequency = <10000000>;
-    reset-gpios = <&pro_micro 10 GPIO_ACTIVE_LOW>;
-    cs-gpios = <&pro_micro 9 GPIO_ACTIVE_LOW>;
+        row-gpios
+            = <&gpio0 6 GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN>,
+              <&gpio0 7 GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN>,
+              <&gpio0 8 GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN>,
+              <&gpio0 0 GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN>,
+              <&gpio0 4 GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN>;
+
+        col-gpios
+            = <&gpio0 10 GPIO_ACTIVE_HIGH>,
+              <&gpio0 16 GPIO_ACTIVE_HIGH>,
+              <&gpio0 14 GPIO_ACTIVE_HIGH>,
+              <&gpio0 15 GPIO_ACTIVE_HIGH>,
+              <&gpio0 18 GPIO_ACTIVE_HIGH>,
+              <&gpio0 19 GPIO_ACTIVE_HIGH>;
+    };
+
+    display {
+        compatible = "ssd1306,ssd1306fb";
+        reg = <0x3c>;
+        width = <128>;
+        height = <32>;
+        spi-max-frequency = <10000000>;
+        reset-gpios = <&gpio0 10 GPIO_ACTIVE_LOW>;
+        cs-gpios = <&gpio0 9 GPIO_ACTIVE_LOW>;
+    };
 };
