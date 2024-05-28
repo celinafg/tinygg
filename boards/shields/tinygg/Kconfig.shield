@@ -1,12 +1,8 @@
-# tinygg_shield/boards/shields/tinygg/Kconfig
-
+# Copyright (c) 2020 Pete Johanson
+# SPDX-License-Identifier: MIT
 
 config SHIELD_TINYGG_LEFT
-        def_bool $(shields_list_contains,tinygg_left)
-    select SPI
+    def_bool $(shields_list_contains,corne_left)
 
 config SHIELD_TINYGG_RIGHT
-        def_bool $(shields_list_contains,tinygg_right)
-    select SPI
-
-
+    def_bool $(shields_list_contains,corne_right)
