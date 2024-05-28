@@ -4,8 +4,8 @@ id: tinygg
 name: tinygg
 type: shield
 url: https://github.com/celinafg/tinygg
-requires: [nice_nano_v2]
-exposes: [i2c_oled]
+requires: [nice_nano_v2, i2c_oled]
+exposes: [nice_view_header]
 features:
   - keys
   - display
