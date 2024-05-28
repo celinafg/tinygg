@@ -1,3 +1,7 @@
+# tinygg_shield/boards/shields/tinygg/Kconfig
+config SHIELD_TINYGG
+    def_bool $(shields_list_contains,tinygg)
+
 config SHIELD_TINYGG_LEFT
     def_bool $(shields_list_contains,tinygg_left)
 

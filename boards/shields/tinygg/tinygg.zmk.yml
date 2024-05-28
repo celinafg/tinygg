@@ -1,11 +1,14 @@
+# tinygg_shield/tinygg.zmk.yml
 file_format: "1"
 id: tinygg
-name: tinygg
+name: TinyGG
 type: shield
-url: https://github.com/celinafg/tinygg
+url: https://github.com/your_repo/tinygg_shield
 requires: [nice_nano_v2]
+exposes: [display]
 features:
   - keys
+  - display
 siblings:
   - tinygg_left
   - tinygg_right

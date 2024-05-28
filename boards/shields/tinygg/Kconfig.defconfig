@@ -1,9 +1,22 @@
+# tinygg_shield/boards/shields/tinygg/Kconfig.defconfig
 if SHIELD_TINYGG_LEFT
 
 config ZMK_KEYBOARD_NAME
-    default "tinygg"
+    default "TinyGG"
 
 config ZMK_SPLIT_ROLE_CENTRAL
+    default y
+
+config ZMK_DISPLAY
+    default y
+
+config ZMK_WIDGET_LAYER_STATUS
+    default y
+
+config ZMK_WIDGET_BATTERY_STATUS
+    default y
+
+config ZMK_WIDGET_OUTPUT_STATUS
     default y
 
 endif
