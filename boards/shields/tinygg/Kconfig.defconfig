@@ -1,4 +1,4 @@
-if SHIELD_CORNEY_ISLAND_LEFT
+if SHIELD_TINYGG_LEFT
 
     config ZMK_KEYBOARD_NAME
         default "tinygg"
